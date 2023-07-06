@@ -10,14 +10,14 @@
 </head>
 <body>
     <div class="main-login">
-      
         <div class="left-login">
-            <div class="wc-text">
-                <h1> /codewith.beki</h1>
-                <h4>Ro`yxatdan o`tish uchun quyidagi maydonlarni to`ldiring</h4>
+            <div class="l-text-effect">
+                <h1 class="type-brand"></h1>
+                <h3>description qisqacha malumot</h3>
             </div>
-           
-            <img class="lm" src= "./astronaut-animate.svg" alt="">
+            <div class="l-img">
+                <img src="page-left.svg" alt="">
+            </div>
             
         </div>
         <div class="right-login">
@@ -40,5 +40,31 @@
             
         </div>
     </div>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script><!--cdn auto text-->
+    <script>
+        const typedStrings = [
+        'Assalomu Aleykum!',
+        'kompaniyangiz nomi.. da',
+        'ajoyib kuponga ega bo\'ling!',
+        'login tizimga kiring va bepul kuponlarga ega boling!'
+      ];
+      
+      const typedElement = document.querySelector('.type-brand');//Create the typed element and options
+      const typedOptions = {
+        strings: typedStrings,
+        typeSpeed: 90,
+        backSpeed: 40,
+        onComplete: function(self) {
+          if (self.loopCount === 2) {
+            const textBrandElement = document.querySelector('.type-brand');
+            textBrandElement.innerHTML = '';
+            textBrandElement.textContent = 'soloTem';
+            self.loop = false;
+          }
+        }
+      };    
+                    //Typed.js effect
+      const typed = new Typed(typedElement, typedOptions);
+    </script>
 </body>
 </html>
